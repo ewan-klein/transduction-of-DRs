@@ -1,0 +1,112 @@
+\documentclass[11pt]{article}
+% \setmainfont[Ligatures=TeX]{Linux Libertine O}
+
+\usepackage{booktabs}
+\usepackage[margin=10pt,font=small, textfont=it, labelfont=bf,
+               labelsep=quad]{caption}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{sectsty}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage[svgnames]{xcolor}
+
+\usepackage[
+a4paper, 
+height = 24cm,
+width = 16cm
+]{geometry}
+
+\usepackage{fancyhdr}
+\usepackage[yyyymmdd,hhmmss]{datetime}
+\pagestyle{fancy}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage} %Version of \today, \currenttime}
+
+\sectionfont{\MakeUppercase}
+\subsectionfont{\MakeUppercase}
+
+\usepackage{url}
+\urlstyle{same}
+
+\usepackage{graphicx}
+\graphicspath{{./media/}}
+\usepackage[UKenglish]{babel}
+\usepackage{fontspec}
+
+\setmainfont[Ligatures=TeX]{Charter}
+
+\usepackage[xcolor]{mdframed}
+\mdfdefinestyle{theoremstyle}{%
+  % linecolor=red,linewidth=2pt,%
+  backgroundcolor=PowderBlue,
+  frametitlerule=true,%
+  frametitlebackgroundcolor=gray!20,
+  innertopmargin=\topskip,
+}
+\mdtheorem[style=theoremstyle]{definition}{Data Assessment}
+
+\usepackage[
+backend=biber,
+sortlocale=auto,
+sorting=none,
+style=numeric,
+citestyle=numeric,
+maxnames=4
+]{biblatex}
+\addbibresource{trans-refs.bib}
+
+% \usepackage[colorinlistoftodos,prependcaption,textsize=footnotesize]{todonotes}
+% \presetkeys%
+%     {todonotes}%
+%     {inline,backgroundcolor=yellow}{}
+
+% correct bad hyphenation here
+%\hyphenation{op-tical net-works semi-conduc-tor}
+
+\newcommand{\term}[1]{\textit{#1}}
+\newcommand{\project}{\textit{Data and Design for Property Planning}}
+
+\newenvironment{qt}
+{``\itshape }
+{''\ignorespacesafterend\ }
+
+\title{Transduction of Discourse Representations}
+\date{January 1983}
+\author{Ewan Klein}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+Recent work in syntactic theory has indicated that many of the phenomena thought to require rules
+with transformational power can in fact be insightfully handled by formal devices which generate
+only context-free languages. The framework of Generalized Phrase Structure Grammar (GPSG) has
+proved particularly successful in this respect, allowing precise and detailed analyses of a wide
+range of syntactic facts (cf.\ Gazdar (1981), (1982), Gazdar, Pullum and Sag (forthcoming)).
+Unbounded dependencies of the sort associated with the transformational rule of \textit{wh}-Movement would
+seem to provide a demanding test for any syntactic approach that eschews movement rules. Yet they
+have yielded gracefully to a phrase structure treatment in which the presence and position of `gaps'
+in a structure are coded by a special set of syntactic categories, called \em{derived} (or \em{slash})
+categories.
+
+Roughly speaking, if $\alpha$ and $\beta$ are any basic categories (i.e. members of the
+set $N$ of nonterminal symbols), then $\alpha$/$\beta$ is a derived category. The interpretation of a
+derived category is as follows: A node labelled $\alpha$/$\beta$ will dominate just the trees that
+can be dominated by $\alpha$, except that somewhere in the $\alpha$/$\beta$ tree there must be a node of
+the form $\beta$/$\beta$ dominating the empty string, and every node linking $\alpha$/$\beta$ and
+$\beta$/$\beta$ must be of the form $\sigma$/$\beta$. That is, $\alpha$/$\beta$ labels a node of
+type a which dominates material containing a gap of the type $\beta$. For example, S/NP is a
+sentence which has an NP missing somewhere (not necessarily from within that immediate sentence);
+There are also derived rules, which allow the propagation of a gap through a tree, and linking rules
+which allow the introduction of a category with a gap. For example, given rule (1), we get the
+derived rules (2) and (3).
+
+
+\end{document}
